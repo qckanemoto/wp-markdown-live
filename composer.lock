@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "79d880188f32a95b6dcadb28bcf702d8",
+    "packages": [
+        {
+            "name": "brainsware/php-markdown-extra-extended",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Brainsware/php-markdown-extra-extended.git",
+                "reference": "abd156b968ff9cd993db3c0b2713af36be17d580"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Brainsware/php-markdown-extra-extended/zipball/abd156b968ff9cd993db3c0b2713af36be17d580",
+                "reference": "abd156b968ff9cd993db3c0b2713af36be17d580",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "markdown_extended.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Markdown & Extra",
+            "homepage": "https://github.com/Brainsware/php-markdown-extra-extended",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2013-09-06 13:50:28"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "brainsware/php-markdown-extra-extended": 20
+    },
+    "platform": {
+        "php": ">=5.3"
+    },
+    "platform-dev": [
+
+    ]
+}

@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Markdown Live
 Plugin URI: http://github.com/qckanemoto/wp-markdown-live
-Description:
+Description: Hide wysiwyg editor and create Markdown editor with live preview.
 Version: 1.0
 Author: Takashi Kanemoto
 Author URI: http://github.com/qckanemoto

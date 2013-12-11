@@ -1,4 +1,5 @@
 {
+    "name": "qckanemoto/wp-markdown-live",
     "require": {
         "php": ">=5.3",
         "brainsware/php-markdown-extra-extended": "dev-master"

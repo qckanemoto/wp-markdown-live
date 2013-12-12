@@ -1,10 +1,10 @@
 === wp-markdown-live ===
 Contributors: Takashi Kanemoto
 Donate link: none
-Tags: markdown, live, realtime, preview
+Tags: markdown, live, realtime, preview, column
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.0.1
+Stable tag: v1.0.2
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
@@ -28,6 +28,9 @@ none.
 1. Markdown editor and live-preview.
 
 == Changelog ==
+
+= 1.0.2 =
+* Removed own jquery.
 
 = 1.0.1 =
 * Initial release.

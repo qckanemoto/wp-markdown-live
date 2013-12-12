@@ -69,9 +69,6 @@ class WpMarkdownLive
 
     function admin_enqueue_scripts()
     {
-        if (!wp_script_is('jquery')) {
-            wp_enqueue_script('wp-markdown-live-js-jquery', plugin_dir_url(__FILE__) . 'js/jquery.min.js');
-        }
         wp_enqueue_script('wp-markdown-live-js-marked', plugin_dir_url(__FILE__) . 'js/marked.js');
         wp_enqueue_script('wp-markdown-live-js-behave', plugin_dir_url(__FILE__) . 'js/behave.js');
         wp_enqueue_script('wp-markdown-live-js-script', plugin_dir_url(__FILE__) . 'js/script.js');

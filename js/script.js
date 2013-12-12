@@ -1,17 +1,12 @@
 $(function() {
-    // delay re-layout.
+    // insert syntax link.
     setTimeout(function() {
-        // insert syntax link.
         $("#ed_toolbar").append("<div style='float:right; margin-top:-0.6em;'><p><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Markdown syntax ?</a></p></div>");
-
-        // resize textarea.
-        var half = $("#postdivrich").width() / 2 - 5;
-        $("#postdivrich").width(half).css("float", "left");
-
-        // insert preview area.
-        var $preview = $("<div id='wp-markdown-live-preview'></div>").width(half).css("float", "right").css("margin-top", $("#wp-content-editor-tools").height());
-        $("#postdivrich").after($preview);
     }, 1000);
+
+    // insert preview area.
+    var $preview = $("<div id='wp-markdown-live-preview'></div>").css("float", "right").css("margin-top", $("#wp-content-editor-tools").height());
+    $("#postdivrich").after($preview);
 
     // customize textarea.
     new Behave({
@@ -28,6 +23,20 @@ $(function() {
 
     // handle event on textarea.
     $("textarea#content").on("keyup change", function(e) {
-        $("#wp-markdown-live-preview").html("<p>" + marked($(this).val()) + "</p>");
+
+        // show scrollbar forcely.
+        var height = $("body").height();
+        $("body").height(100000);
+
+        // resize textarea and preview area.
+        var half = $("#post-body-content").outerWidth() / 2 - 5;
+        $("#postdivrich").outerWidth(half).css("float", "left");
+        $("#wp-markdown-live-preview").outerWidth(half);
+
+        // render preview area.
+        $("#wp-markdown-live-preview").html(marked($(this).val()));
+
+        // restore body height.
+        $("body").height(height);
     }).change();
 });

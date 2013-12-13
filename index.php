@@ -27,6 +27,7 @@ class WpMarkdownLive
         remove_filter('the_excerpt', 'wpautop');
         remove_filter('the_content', 'wptexturize');
         remove_filter('the_excerpt', 'wptexturize');
+        add_action('wp_ajax_markdown', array(&$this, 'ajax_markdown'));
         add_filter('the_content', array(&$this, 'markdown'));
         add_filter('the_excerpt', array(&$this, 'markdown'));
     }
@@ -69,7 +70,6 @@ class WpMarkdownLive
 
     function admin_enqueue_scripts()
     {
-        wp_enqueue_script('wp-markdown-live-js-marked', plugin_dir_url(__FILE__) . 'js/marked.js');
         wp_enqueue_script('wp-markdown-live-js-behave', plugin_dir_url(__FILE__) . 'js/behave.js');
         wp_enqueue_script('wp-markdown-live-js-script', plugin_dir_url(__FILE__) . 'js/script.js');
         wp_enqueue_style('wp-markdown-live-css-style', plugin_dir_url(__FILE__) . 'css/style.css');
@@ -90,6 +90,29 @@ class WpMarkdownLive
                 QTags.addButton('md_image', 'img', '![Alt Text](http://)', '', 'm');
             </script>
             <?php
+        }
+    }
+
+    function ajax_markdown()
+    {
+        if (isset($_POST['content'])) {
+            $content = $_POST['content'];
+
+            // apply SyntaxHighlighter Plugin.
+            try {
+                if (class_exists('SyntaxHighlighter')) {
+                    $highlighter = @new SyntaxHighlighter();
+                    if (method_exists($highlighter, 'parse_shortcodes')) {
+                        $tmp = @$highlighter->parse_shortcodes($content);
+                        $content = $tmp ?: $content;
+                    }
+                }
+            } catch (Exception $e) {
+                // do nothing for now.
+            }
+
+            echo $this->markdown($content);
+            die;
         }
     }
 

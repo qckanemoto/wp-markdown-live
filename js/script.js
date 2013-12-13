@@ -1,9 +1,4 @@
 $(function() {
-    // insert syntax link.
-    setTimeout(function() {
-        $("#ed_toolbar").append("<div style='float:right; margin-top:-0.6em;'><p><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Markdown syntax ?</a></p></div>");
-    }, 1000);
-
     // insert preview area.
     var $preview = $("<div id='wp-markdown-live-preview'></div>").css("float", "right").css("margin-top", $("#wp-content-editor-tools").height());
     $("#postdivrich").after($preview);
@@ -21,22 +16,85 @@ $(function() {
         fence: false
     });
 
-    // handle event on textarea.
-    $("textarea#content").on("keyup change", function(e) {
+    // insert preview button after all.
+    setTimeout(function() {
+        var $button = $("<button type='button' id='wp-markdown-live-button' class='button ed_button' style='float:right; margin-top:2px;'>preview</button>");
+        var $tooltip = $("<p class='wp-markdown-live-tooltip'>Or press \"Ctlr+L\"</p>").hide();
+        $("#ed_toolbar").append($button);
+        $("#ed_toolbar").append($tooltip);
 
-        // show scrollbar forcely.
-        var height = $("body").height();
-        $("body").height(100000);
+        // handle event on textarea.
+        $("#wp-markdown-live-button")
+            .on("click", function(e) {
+                var content = $("textarea#content").val();
+                $.ajax({
+                    type        : "POST",
+                    dataType    : "text",
+                    url         : ajaxurl,
+                    data        : "content=" + encodeURIComponent(content) + "&action=markdown",
+                    success     : function(data) {
+                        // show scrollbar forcely.
+                        var height = $("body").height();
+                        $("body").height(100000);
 
-        // resize textarea and preview area.
-        var half = $("#post-body-content").outerWidth() / 2 - 5;
-        $("#postdivrich").outerWidth(half).css("float", "left");
-        $("#wp-markdown-live-preview").outerWidth(half);
+                        // resize textarea and preview area.
+                        var half = $("#post-body-content").outerWidth() / 2 - 5;
+                        $("#postdivrich").outerWidth(half).css("float", "left");
+                        $("#wp-markdown-live-preview").outerWidth(half);
 
-        // render preview area.
-        $("#wp-markdown-live-preview").html(marked($(this).val()));
+                        // render preview area.
+                        $("#wp-markdown-live-preview").html(data);
 
-        // restore body height.
-        $("body").height(height);
-    }).change();
+                        // resize textarea.
+                        $("textarea#content").height($("#wp-markdown-live-preview").height());
+
+                        // restore body height.
+                        $("body").height(height);
+                    },
+                    error       : function(xmlHttpRequest, textStatus, errorThrown) {
+                        // do nothing for now.
+                    }
+                });
+            })
+            .on("mouseover", function() {
+                $(this).next(".wp-markdown-live-tooltip").fadeIn(100);
+            })
+            .on("mouseout", function() {
+                $(this).next(".wp-markdown-live-tooltip").fadeOut(100);
+            })
+            .click();
+    }, 1000);
+
+    // observe keyboard shortcut.
+    $("*")
+        .on("keydown", function(e) {
+            switch (e.keyCode) {
+                case 17:    // Ctrl
+                    $("#wp-markdown-live-preview").addClass("down-ctrl");
+                    if ($("#wp-markdown-live-preview").hasClass("down-l")) {
+                        $("#wp-markdown-live-button").click();
+                    }
+                    break;
+                case 76:    // l
+                    $("#wp-markdown-live-preview").addClass("down-l");
+                    if ($("#wp-markdown-live-preview").hasClass("down-ctrl")) {
+                        $("#wp-markdown-live-button").click();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        })
+        .on("keyup", function(e) {
+            switch (e.keyCode) {
+                case 17:    // Ctrl
+                    $("#wp-markdown-live-preview").removeClass("down-ctrl");
+                    break;
+                case 76:    // l
+                    $("#wp-markdown-live-preview").removeClass("down-l");
+                    break;
+                default:
+                    break;
+            }
+        });
 });

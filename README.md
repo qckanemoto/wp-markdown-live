@@ -1,4 +1,4 @@
-# WP Markdown Live Plugin (English)
+# WP Markdown Live Plugin
 
 This plugin hide wysiwyg editor and create Markdown editor with live preview.
 
@@ -10,7 +10,7 @@ You also can use [SyntaxHighlighter Evolved Plugin](http://www.viper007bond.com/
 
 Please [download here](https://github.com/qckanemoto/wp-markdown-live/raw/v1.0.3/zip/wp-markdown-live.zip).
 
-# WP Markdown Live Plugin (日本語)
+--
 
 WordPress の投稿および固定ページの編集画面で、ビジュアルエディタ (Wysiwyg) を Markdown エディタに置き換え、ライブプレビュー (リアルタイムプレビュー) しながら編集できるようにするためのプラグインです。
 

@@ -4,7 +4,7 @@ Donate link: none
 Tags: markdown, live, realtime, preview, column
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: v1.0.2
+Stable tag: v1.0.3
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
@@ -28,6 +28,9 @@ none.
 1. Markdown editor and live-preview.
 
 == Changelog ==
+
+= 1.0.3 =
+* Changed parser for live-preview to one for public page.
 
 = 1.0.2 =
 * Removed own jquery.

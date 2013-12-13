@@ -1,10 +1,10 @@
 === wp-markdown-live ===
 Contributors: Takashi Kanemoto
-Donate link: none
+Donate link:
 Tags: markdown, live, realtime, preview, column
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: v1.0.3
+Stable tag: v1.0.4
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
@@ -12,7 +12,29 @@ This plugin hide wysiwyg editor and create Markdown editor with live preview.
 
 == Description ==
 
+= Abstract =
+
 This plugin hide wysiwyg editor and create Markdown editor with live preview.
+
+= How to use =
+
+All you need is installing only. You can preview with clicking [preview] button or pressing "Ctrl+L".
+
+You also can use [SyntaxHighlighter Evolved Plugin](http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/) with this plugin.
+
+= 概要 =
+
+WordPress の投稿および固定ページの編集画面で、ビジュアルエディタ (Wysiwyg) を Markdown エディタに置き換え、ライブプレビュー (リアルタイムプレビュー) しながら編集できるようにするためのプラグインです。
+
+= 使い方 =
+
+インストールするだけで使えます。特に設定はありません。Markdown で記事を書き、[preview] ボタンをクリックするか、"Ctrl+L" を押すかするとライブプレビューを更新できます。
+
+また、[SyntaxHighlighter Evolved Plugin](http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/) を導入している場合、ショートコードも正常にコンパイルしてプレビューされます。
+
+= GitHub =
+
+[Click here](https://github.com/qckanemoto/wp-markdown-live) to view on GitHub.
 
 == Installation ==
 
@@ -29,13 +51,16 @@ none.
 
 == Changelog ==
 
-= 1.0.3 =
+= v1.0.4 =
+* Just modified readme.
+
+= v1.0.3 =
 * Changed parser for live-preview to one for public page.
 
-= 1.0.2 =
+= v1.0.2 =
 * Removed own jquery.
 
-= 1.0.1 =
+= v1.0.1 =
 * Initial release.
 
 == Upgrade Notice ==

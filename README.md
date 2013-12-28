@@ -8,7 +8,7 @@ All you need is installing only. You can preview with clicking [preview] button 
 
 You also can use [SyntaxHighlighter Evolved Plugin](http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/) with this plugin.
 
-Please [download here](https://github.com/qckanemoto/wp-markdown-live/raw/v1.0.4/zip/wp-markdown-live.zip).
+Please [download here](https://github.com/qckanemoto/wp-markdown-live/raw/v1.0.5/zip/wp-markdown-live.zip).
 
 ---
 
@@ -20,4 +20,4 @@ WordPress の投稿および固定ページの編集画面で、ビジュアル�
 
 また、[SyntaxHighlighter Evolved Plugin](http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/) を導入している場合、ショートコードも正常にコンパイルしてプレビューされます。
 
-[ここから](https://github.com/qckanemoto/wp-markdown-live/raw/v1.0.4/zip/wp-markdown-live.zip) ダウンロードできます。
+[ここから](https://github.com/qckanemoto/wp-markdown-live/raw/v1.0.5/zip/wp-markdown-live.zip) ダウンロードできます。

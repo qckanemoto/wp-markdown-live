@@ -3,8 +3,8 @@ Contributors: Takashi Kanemoto
 Donate link:
 Tags: markdown, live, realtime, preview, column
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: v1.0.4
+Tested up to: 3.8
+Stable tag: v1.0.5
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
@@ -50,6 +50,9 @@ none.
 1. Markdown editor and live-preview.
 
 == Changelog ==
+
+= v1.0.5 =
+* Fixed jQuery.noConflict() problem and image previewing problem.
 
 = v1.0.4 =
 * Just modified readme.

@@ -111,7 +111,10 @@ class WpMarkdownLive
                 // do nothing for now.
             }
 
-            echo $this->markdown($content);
+            // don't escape '"'.
+            $content = preg_replace('/\\\"/', '', $this->markdown($content));
+
+            echo $content;
             die;
         }
     }

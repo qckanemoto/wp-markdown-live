@@ -5,4 +5,5 @@
 #wp-markdown-live-preview ul{list-style-type:disc !important;list-style-position:inside !important}#wp-markdown-live-preview ul li{margin-left:1em}
 #wp-markdown-live-preview ol li{margin-left:1em}
 #wp-markdown-live-preview table{border-collapse:collapse;margin:2em 0}#wp-markdown-live-preview table tr th,#wp-markdown-live-preview table tr td{border:1px solid #ccc;padding:.5em}
+#wp-markdown-live-preview img{max-width:100%;height:auto}
 .wp-markdown-live-tooltip{font-weight:bold;color:#391;float:right;margin-top:6px;height:0;padding-right:10px}

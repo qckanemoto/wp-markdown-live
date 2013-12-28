@@ -1,3 +1,5 @@
+$ = jQuery.noConflict();
+
 $(function() {
     // insert preview area.
     var $preview = $("<div id='wp-markdown-live-preview'></div>").css("float", "right").css("margin-top", $("#wp-content-editor-tools").height());
